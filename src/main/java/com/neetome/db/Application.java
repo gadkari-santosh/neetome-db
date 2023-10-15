@@ -12,8 +12,8 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 @SpringBootApplication
 @EnableAutoConfiguration
-@EnableMongoRepositories(basePackages = "com.neetome.db.repository.nosql")
-@ComponentScan(basePackages = {"db.migration","com.neetome.db"})
+@EnableMongoRepositories(basePackages = "com.neetome.dao")
+@ComponentScan(basePackages = {"db.migration","com.neetome.db","com.neetome.dao"})
 public class Application {
 
     @Autowired

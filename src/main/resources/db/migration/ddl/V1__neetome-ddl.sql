@@ -58,7 +58,7 @@ CREATE TABLE file_storage_tbl (
   id BIGINT NOT NULL AUTO_INCREMENT,
    name VARCHAR(255) NULL,
    type VARCHAR(255) NULL,
-   data BLOB NULL,
+   data MEDIUMBLOB NULL,
    CONSTRAINT pk_file_storage_tbl PRIMARY KEY (id)
 );
 
@@ -160,4 +160,20 @@ CREATE TABLE testimony_tbl (
    created_by VARCHAR(255) NULL,
    CONSTRAINT pk_testimony_tbl PRIMARY KEY (id)
 );
+
+-- academics table
+
+CREATE TABLE academics_board_tbl (
+  id BIGINT AUTO_INCREMENT NOT NULL,
+   name VARCHAR(255) NULL,
+   `description` VARCHAR(255) NULL,
+   authority VARCHAR(255) NULL,
+   img_name VARCHAR(255) NULL,
+   grades VARCHAR(255) NULL,
+   is_active TINYINT(1) NULL,
+    created_on datetime NULL,
+      created_by VARCHAR(255) NULL,
+   CONSTRAINT pk_academics_board_tbl PRIMARY KEY (id)
+);
+
 

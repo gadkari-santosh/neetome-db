@@ -1,19 +1,16 @@
-package com.neetome.db;
+package db.migration.nosql;
 
-import com.neetome.db.entity.nosql.*;
-import com.neetome.db.entity.nosql.collection.Migration;
-import com.neetome.db.entity.nosql.collection.PracticeCollection;
-import com.neetome.db.entity.nosql.collection.PracticeQuestionSetCollection;
-import com.neetome.db.entity.nosql.enums.DIFFICULTY_LEVEL;
-import com.neetome.db.entity.nosql.enums.GRADE;
-import com.neetome.db.repository.nosql.PracticeCollectionRepository;
-import com.neetome.db.repository.nosql.PracticeQuestionSetCollectionRepository;
+import com.neetome.dao.entity.nosql.*;
+import com.neetome.dao.entity.nosql.collection.PracticeCollection;
+import com.neetome.dao.entity.nosql.collection.PracticeQuestionSetCollection;
+import com.neetome.dao.repository.nosql.PracticeCollectionRepository;
+import com.neetome.dao.repository.nosql.PracticeQuestionSetCollectionRepository;
+import com.neetome.dto.enums.DIFFICULTY_LEVEL;
+import com.neetome.dto.enums.GRADE;
+import com.neetome.dto.enums.SUBJECT_NAME;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.types.ObjectId;
-import org.flywaydb.core.api.migration.BaseJavaMigration;
-import org.flywaydb.core.api.migration.Context;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -21,48 +18,20 @@ import java.util.List;
 
 @Slf4j
 @Component
-public class Mongodb  {
+public class PracticeCollectionDataPopulator extends DataPopulator {
 
     @Autowired
-    private MongoTemplate mt;
+    private PracticeCollectionRepository repository;
 
     @Autowired
-    PracticeCollectionRepository repository;
+    private PracticeQuestionSetCollectionRepository qSetRepository;
 
-    private String version = "1.0";
-
-    @Autowired
-    PracticeQuestionSetCollectionRepository qSetRepository;
-
-    public void migrate(Context context) throws Exception {
-        log.info("Started V4_mongodb mibration");
-
-        var cursor = mt.getCollection("migration").find().cursor();
-
-        if (cursor.hasNext()) {
-
-            var item = cursor.next();
-            if (version.equalsIgnoreCase(item.get("name").toString())) {
-                log.info("skipping mongodb migration");
-                return;
-            }
-
-            migrate();
-
-        } else {
-            migrate();
-        }
+    protected PracticeCollectionDataPopulator() {
+        super("PracticeCollection");
     }
 
-    private void migrate() {
-        populateSamplePracticeData();
-
-        Migration migration1 = new Migration();
-        migration1.setName(version);
-        mt.save(migration1, "migration");
-    }
-
-    private void populateSamplePracticeData() {
+    @Override
+    protected void populateSampleData() {
         PracticeCollection practiceDocument = new PracticeCollection();
         practiceDocument.setName("NTSE 2023 practice");
         practiceDocument.setDescription("1000+ question set for scholership exam");
@@ -78,6 +47,8 @@ public class Mongodb  {
 
         TopicDoc topic1 = new TopicDoc();
         topic1.setName("2 level factors");
+
+        var qs1Id = new ObjectId().toString();
 
         QuestionSetInfoDoc qs1 = new QuestionSetInfoDoc();
         qs1.setId(new ObjectId().toString());
@@ -120,8 +91,8 @@ public class Mongodb  {
 
         chapter2.setTopics(List.of(topic21));
 
-        PracticeSubjectDoc subject = new PracticeSubjectDoc();
-        subject.setName("MATHS");
+        SubjectDoc subject = new SubjectDoc();
+        subject.setName(SUBJECT_NAME.MATHS);
         subject.setChapters(List.of(chapter1,chapter2));
 
         PracticeIndexDoc index = new PracticeIndexDoc();
@@ -132,9 +103,9 @@ public class Mongodb  {
 
         PracticeQuestionSetCollection questionSet = new PracticeQuestionSetCollection();
         questionSet.setId(qSetIdEasy);
-        questionSet.setPracticeTestId(1001l);
+        questionSet.setPracticeTestId(1l);
 
-        McqQuestionDoc q1 = new McqQuestionDoc();
+        QuestionDoc q1 = new QuestionDoc();
         q1.setId("64aaf814d88e9506fe950754::1");
         q1.setText("Which of these is a full list of factors of 24?");
 
@@ -146,7 +117,7 @@ public class Mongodb  {
         q1.setOptions(List.of(op1,op2,op3));
         q1.setAnswer(op2);
 
-        McqQuestionDoc q2 = new McqQuestionDoc();
+        QuestionDoc q2 = new QuestionDoc();
         q2.setId("64aaf814d88e9506fe950754::2");
         q2.setText("Which of these is a full list of the common factors of 12 and 30?");
 
@@ -162,12 +133,9 @@ public class Mongodb  {
 
         PracticeQuestionSetCollection questionSet2 = new PracticeQuestionSetCollection();
         questionSet2.setId(qSetIdHard);
-        questionSet2.setPracticeTestId(1001l);
+        questionSet2.setPracticeTestId(1l);
 
-        ShortFreeTextQuestionDoc q3 = new ShortFreeTextQuestionDoc();
-        q3.setText("55 - 5");
-        q3.setAnswer("50");
-        questionSet.setQuestions(List.of(q3));
+        questionSet.setQuestions(List.of(q1,q2));
 
         qSetRepository.save(questionSet);
         qSetRepository.save(questionSet2);

@@ -4,65 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ac082c3-40af-49ca-a898-4d3a846d6eca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-storage/akash.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-storage/drhbbvc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-storage/em.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-storage/ieo_sof.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-storage/igko_sof.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-storage/isso_sof.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-storage/issq.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-storage/marha.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-storage/mpsp.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-storage/nco-sof.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-storage/nsejs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-storage/nso_sof.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-storage/nsq.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-storage/nstse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-storage/uco.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-storage/uieo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-storage/uimo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/ApplicationEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/Mongodb.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/config/FlywayConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/ChapterDoc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/McqQuestionDoc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/OptionDoc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/PracticeExamDoc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/PracticeIndexDoc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/PracticeSubjectDoc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/QuestionDoc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/QuestionSetInfoDoc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/ShortFreeTextQuestionDoc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/TopicDoc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/collection/Migration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/collection/PracticeCollection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/collection/PracticeQuestionSetCollection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/enums/DIFFICULTY_LEVEL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/enums/GRADE.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/repository/nosql/PracticeCollectionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/repository/nosql/PracticeQuestionSetCollectionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/db/migration/V3__fileStorage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-local-docker.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/ddl/V1__neetome-ddl.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/migration/dml/V2__neetome_dml.sql" afterDir="false" />
+    <list default="true" id="7ac082c3-40af-49ca-a898-4d3a846d6eca" name="Changes" comment="added mongodb migration">
+      <change afterPath="$PROJECT_DIR$/file-storage/cbsc_board.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file-storage/icse_board.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file-storage/ssc_board.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/db/migration/nosql/AcademicsCollectionDataPopulator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/db/migration/nosql/DataPopulator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/db/migration/nosql/Migration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/ApplicationEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/ApplicationEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/Mongodb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/migration/nosql/PracticeCollectionDataPopulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/ChapterDoc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/McqQuestionDoc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/OptionDoc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/PracticeExamDoc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/PracticeIndexDoc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/PracticeSubjectDoc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/QuestionDoc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/QuestionSetInfoDoc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/ShortFreeTextQuestionDoc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/TopicDoc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/collection/Migration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/collection/PracticeCollection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/collection/PracticeQuestionSetCollection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/enums/DIFFICULTY_LEVEL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql/enums/GRADE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/repository/nosql/PracticeCollectionRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/repository/nosql/PracticeQuestionSetCollectionRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-local-docker.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-local-docker.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/ddl/V1__neetome-ddl.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/ddl/V1__neetome-ddl.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/dml/V2__neetome_dml.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/dml/V2__neetome_dml.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,19 +88,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/Users/santosh/IdeaProjects/neetome-db/src/main/java/com/neetome/db/entity/nosql",
-    "onboarding.tips.debug.path": "/Users/santosh/IdeaProjects/neetome-db/src/main/java/org/neetomi/Main.java",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/santosh/IdeaProjects/neetome-db/src/main/java/com/neetome/db&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/santosh/IdeaProjects/neetome-db/src/main/java/org/neetomi/Main.java&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/neetome/db" />
       <recent name="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$" />
@@ -138,6 +113,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources/db/migration/ddl" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="db.migration.nosql" />
       <recent name="com.neetome.db.repository.nosql" />
       <recent name="com.neetome.db.entity.nosql.enums" />
       <recent name="com.neetome.db.controller" />
@@ -149,7 +125,7 @@
       <module name="neetome-db.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.neetome.db.*" />
+          <option name="PATTERN" value="db.migration.nosql.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -218,7 +194,20 @@
       <option name="presentableId" value="Default" />
       <updated>1689145119904</updated>
     </task>
+    <task id="LOCAL-00001" summary="added mongodb migration">
+      <option name="closed" value="true" />
+      <created>1693231867394</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1693231867394</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added mongodb migration" />
+    <option name="LAST_COMMIT_MESSAGE" value="added mongodb migration" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -227,21 +216,6 @@
           <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/6.0.8/b106774c7479059d6df1eccba22cbd2a2cfc1363/spring-core-6.0.8-sources.jar!/org/springframework/util/ResourceUtils.java</url>
           <line>171</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/neetome/db/ApplicationEventListener.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/neetome/db/Mongodb.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/neetome/db/Mongodb.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -370,8 +370,15 @@ INSERT INTO `testimony_tbl` (`id`,`rating`,`created_by`,`created_ts`,`cust_profi
 INSERT INTO `testimony_tbl` (`id`,`rating`,`created_by`,`created_ts`,`cust_profile`,`cust_name`,`location`,`testimony`) VALUES
 (4,5.2,'Santosh',CURRENT_TIMESTAMP(),'Head of UX at UBS','Nitin K','Pune, MH','My kids love solving it !');
 
+-- academics table data
+insert into academics_board_tbl (id,name,img_name,description,authority,grades,is_active,created_on,created_by)
+values (1,'CBSC','cbsc_board.png','Central Board for secondatory education','Central India govt','G_1,G_2,G_3','1',CURRENT_TIMESTAMP(),'test-tool');
 
+insert into academics_board_tbl (id,name,img_name,description,authority,grades,is_active,created_on,created_by)
+values (2,'ICSE','icse_board.png','Indian Certificate of Secondary Education','Central India govt','G_1,G_2,G_3','1',CURRENT_TIMESTAMP(),'test-tool');
 
+insert into academics_board_tbl (id,name,img_name,description,authority,grades,is_active,created_on,created_by)
+values (3,'SSC','ssc_board.png','The Maharashtra State Board of Secondary and Higher Secondary Education','Maharashtra state govt','G_1,G_2,G_3','1',CURRENT_TIMESTAMP(),'test-tool');
 
 
 
