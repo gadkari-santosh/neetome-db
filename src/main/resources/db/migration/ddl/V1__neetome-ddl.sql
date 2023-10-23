@@ -58,7 +58,7 @@ CREATE TABLE file_storage_tbl (
   id BIGINT NOT NULL AUTO_INCREMENT,
    name VARCHAR(255) NULL,
    type VARCHAR(255) NULL,
-   data MEDIUMBLOB NULL,
+   data LONGBLOB NULL,
    CONSTRAINT pk_file_storage_tbl PRIMARY KEY (id)
 );
 
@@ -170,10 +170,14 @@ CREATE TABLE academics_board_tbl (
    authority VARCHAR(255) NULL,
    img_name VARCHAR(255) NULL,
    grades VARCHAR(255) NULL,
+   default_grade VARCHAR(100) NULL,
    is_active TINYINT(1) NULL,
     created_on datetime NULL,
       created_by VARCHAR(255) NULL,
    CONSTRAINT pk_academics_board_tbl PRIMARY KEY (id)
 );
 
+alter table academics_board_tbl add column default_grade VARCHAR(100);
+
+update academics_board_tbl set default_grade='G_3';
 

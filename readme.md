@@ -1,6 +1,6 @@
 # Tagging the image
 # docker image tag <image>:<tag> <repository-name>/image:tag
-docker build -t neetomi/neetome-db:1.1 .
+docker build -t neetomi/neetome-db:1.2 .
 
 # Tagging image
 # docker image tag neetomi-exam-mgmt-service:1.0 neetomi/neetomi-exam-mgmt-service:1.0
@@ -8,7 +8,7 @@ docker build -t neetomi/neetome-db:1.1 .
 
 # Push image to private docker hub
 # docker push <repository-name>/<tag>
-docker push  neetomi/neetome-db:1.1
+docker push  neetomi/neetome-db:1.3
 
 # docker compose
 docker compose up

@@ -27,7 +27,12 @@ public class V3__fileStorage extends BaseJavaMigration {
 
             for ( File file : files ) {
                 insert.setString(1, file.getName());
-                insert.setString(2,"image/png");
+
+                if (file.getName().endsWith("png"))
+                    insert.setString(2,"image/png");
+                else if (file.getName().endsWith("pdf"))
+                    insert.setString(2,"application/pdf");
+
                 insert.setBlob(3, new FileInputStream(file));
 
                 insert.execute();

@@ -3,8 +3,11 @@ package db.migration.nosql;
 import com.neetome.dao.entity.nosql.*;
 import com.neetome.dao.entity.nosql.collection.AcademicsIndexCollection;
 import com.neetome.dao.entity.nosql.collection.AcademicsQuestionSetCollection;
+import com.neetome.dao.entity.nosql.collection.RevisionCardsCollection;
 import com.neetome.dao.repository.nosql.AcademicsIndexCollectionRepository;
 import com.neetome.dao.repository.nosql.AcademicsQuestionSetCollectionRepository;
+import com.neetome.dao.repository.nosql.RevisionCardsCollectionRepository;
+import com.neetome.dto.enums.CONTENT_TYPE;
 import com.neetome.dto.enums.DIFFICULTY_LEVEL;
 import com.neetome.dto.enums.GRADE;
 import com.neetome.dto.enums.SUBJECT_NAME;
@@ -28,6 +31,9 @@ public class AcademicsCollectionDataPopulator extends DataPopulator {
     @Autowired
     private AcademicsQuestionSetCollectionRepository questionSetCollectionRepository;
 
+    @Autowired
+    private RevisionCardsCollectionRepository revisionCardsCollectionRepository;
+
     protected AcademicsCollectionDataPopulator() {
         super("AcademicsCollection");
     }
@@ -44,10 +50,106 @@ public class AcademicsCollectionDataPopulator extends DataPopulator {
         index.setBoardId(1l);
         index.setGrade(GRADE.G_3);
 
+        var mathSubjecct = getMathSubject(qs1Id,qs2Id,qs3Id,qs4Id);
+        var englishSubject = getEnglishSubject(qs1Id,qs2Id,qs3Id,qs4Id);
+
+        index.setSubjects(Arrays.asList(mathSubjecct, englishSubject));
+
+        repository.save(index);
+
+        questionSetCollectionRepository.save(generateQuestionSet(qs1Id, 1l));
+        questionSetCollectionRepository.save(generateQuestionSet(qs2Id, 1l));
+        questionSetCollectionRepository.save(generateQuestionSet(qs3Id, 1l));
+        questionSetCollectionRepository.save(generateQuestionSet(qs4Id, 1l));
+    }
+
+    private RevisionCardsCollection getRevisionCards(String id, String title, SUBJECT_NAME subjectName) {
+
+        RevisionCardsCollection revisionCardsCollection = new RevisionCardsCollection();
+        revisionCardsCollection.setGrade(GRADE.G_3);
+        revisionCardsCollection.setId(id);
+        revisionCardsCollection.setTitle(title);
+        revisionCardsCollection.setCardImages(List.of("r1.png","r2.png","r3.png"));
+        revisionCardsCollection.setSubject(subjectName);
+
+        return revisionCardsCollection;
+    }
+
+    private SubjectDoc getMathSubject(String qs1Id,String qs2Id,String qs3Id,String qs4Id) {
         SubjectDoc subject = new SubjectDoc();
         subject.setName(SUBJECT_NAME.MATHS);
         subject.setId(new ObjectId().toString());
         subject.setIcon("maths_subject.png");
+
+        ChapterDoc chapter1 = new ChapterDoc();
+        chapter1.setId("1");
+        chapter1.setName("Real Numbers");
+
+        var rId = new ObjectId();
+        var rcollection = getRevisionCards(rId.toString(),"Real Numbers", SUBJECT_NAME.MATHS);
+        revisionCardsCollectionRepository.save(rcollection);
+        RevisionCardRefDoc refDoc = new RevisionCardRefDoc();
+        refDoc.setId(rId.toString());
+        refDoc.setTitle("Real Numbers");
+        chapter1.setRevisionCards(List.of(refDoc));
+
+        TopicDoc topic1 = new TopicDoc();
+        topic1.setId("1.1");
+        topic1.setName("The Fundamental Theorem of Arithmetic");
+        topic1.setQuestionSets(Arrays.asList(getQS(EASY,qs1Id)));
+
+        LectureRefDoc ref = new LectureRefDoc();
+        ref.setOrderId(1);
+        ref.setTitle("The Fundamental Theorem of Arithmetic");
+        ref.setContentType(CONTENT_TYPE.FILE);
+        ref.setData("ceap110.pdf");
+
+        topic1.setLectures(List.of(ref));
+
+        TopicDoc topic2 = new TopicDoc();
+        topic2.setId("1.2");
+        topic2.setName("Revisiting Irrational Numbers");
+        topic2.setQuestionSets(Arrays.asList(getQS(EASY,qs2Id)));
+
+        topic2.setLectures(List.of(ref));
+
+        chapter1.setTopics(Arrays.asList(topic1, topic2));
+
+        ChapterDoc chapter2 = new ChapterDoc();
+        chapter2.setId("2");
+        chapter2.setName("Polynomials");
+
+        RevisionCardRefDoc refDoc2 = new RevisionCardRefDoc();
+        refDoc2.setId(rId.toString());
+        refDoc2.setTitle("Polynomials");
+        chapter2.setRevisionCards(List.of(refDoc2));
+
+        TopicDoc topic21 = new TopicDoc();
+        topic21.setId("2.1");
+        topic21.setName("Geometrical Meaning of the Zeroes of a Polynomial ");
+        topic21.setQuestionSets(Arrays.asList(getQS(EASY,qs3Id)));
+
+        topic21.setLectures(List.of(ref));
+
+        TopicDoc topic22 = new TopicDoc();
+        topic22.setId("2.2");
+        topic22.setName("Relationship between Zeroes and Coefficients of a Polynomial");
+        topic22.setQuestionSets(Arrays.asList(getQS(EASY,qs4Id)));
+
+        topic22.setLectures(List.of(ref));
+
+        chapter2.setTopics(Arrays.asList(topic21, topic22));
+
+        subject.setChapters(Arrays.asList(chapter1, chapter2));
+
+        return subject;
+    }
+
+    private SubjectDoc getEnglishSubject(String qs1Id,String qs2Id,String qs3Id,String qs4Id) {
+        SubjectDoc subject = new SubjectDoc();
+        subject.setName(SUBJECT_NAME.MATHS);
+        subject.setId(new ObjectId().toString());
+        subject.setIcon("english_subject.png");
 
         ChapterDoc chapter1 = new ChapterDoc();
         chapter1.setId("1");
@@ -83,21 +185,13 @@ public class AcademicsCollectionDataPopulator extends DataPopulator {
 
         subject.setChapters(Arrays.asList(chapter1, chapter2));
 
-        index.setSubjects(Arrays.asList(subject));
-
-        repository.save(index);
-
-        questionSetCollectionRepository.save(generateQuestionSet(qs1Id, 1l));
-        questionSetCollectionRepository.save(generateQuestionSet(qs2Id, 1l));
-        questionSetCollectionRepository.save(generateQuestionSet(qs3Id, 1l));
-        questionSetCollectionRepository.save(generateQuestionSet(qs4Id, 1l));
+        return subject;
     }
 
     private QuestionSetInfoDoc getQS(DIFFICULTY_LEVEL level, String id) {
         QuestionSetInfoDoc questionSetInfo = new QuestionSetInfoDoc();
-        questionSetInfo.setLevel(level);
-        questionSetInfo.setSize(10);
         questionSetInfo.setId(id);
+        questionSetInfo.setName("Set ("+level+")");
 
         return questionSetInfo;
     }
@@ -105,6 +199,13 @@ public class AcademicsCollectionDataPopulator extends DataPopulator {
     private AcademicsQuestionSetCollection generateQuestionSet(String id, Long boardId) {
 
         AcademicsQuestionSetCollection qs = new AcademicsQuestionSetCollection();
+        qs.setName("Question Set");
+        qs.setDescription("question-set-description");
+        qs.setNegativeMark(0f);
+        qs.setGrade(GRADE.G_3);
+        qs.setTotalMarks(10.0f);
+        qs.setMarksPerQuestion(1.0f);
+        qs.setTotalTime(-1f);
 
         String questionFormat = "Add {0} and {1}";
 
@@ -128,7 +229,7 @@ public class AcademicsCollectionDataPopulator extends DataPopulator {
 
         qs.setQuestions(questions);
         qs.setId(new ObjectId().toString());
-        qs.setBoardId(boardId);
+
         qs.setQuestionSetId(id);
 
         return qs;

@@ -52,15 +52,9 @@ public class PracticeCollectionDataPopulator extends DataPopulator {
 
         QuestionSetInfoDoc qs1 = new QuestionSetInfoDoc();
         qs1.setId(new ObjectId().toString());
-        qs1.setMinScore(50);
-        qs1.setLevel(DIFFICULTY_LEVEL.EASY);
-        qs1.setSize(40);
 
         QuestionSetInfoDoc qs2 = new QuestionSetInfoDoc();
         qs2.setId(new ObjectId().toString());
-        qs2.setMinScore(50);
-        qs2.setLevel(DIFFICULTY_LEVEL.HARD);
-        qs2.setSize(40);
 
         topic1.setQuestionSets(List.of(qs1,qs2));
 
@@ -77,15 +71,9 @@ public class PracticeCollectionDataPopulator extends DataPopulator {
 
         QuestionSetInfoDoc qs21 = new QuestionSetInfoDoc();
         qs21.setId(qSetIdEasy);
-        qs21.setMinScore(50);
-        qs21.setLevel(DIFFICULTY_LEVEL.EASY);
-        qs21.setSize(2);
 
         QuestionSetInfoDoc qs22 = new QuestionSetInfoDoc();
         qs22.setId(qSetIdHard);
-        qs22.setMinScore(10);
-        qs22.setLevel(DIFFICULTY_LEVEL.HARD);
-        qs22.setSize(2);
 
         topic21.setQuestionSets(List.of(qs21,qs22));
 
