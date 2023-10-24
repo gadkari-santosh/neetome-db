@@ -19,42 +19,20 @@ public abstract class DataPopulator {
         this.collection = collection;
     }
 
+    public abstract void drop();
+
     public void populate() {
         log.info("Started V4_mongodb migration");
 
-        var cursor = mt.getCollection("migration").find().cursor();
-
-        if (cursor.hasNext()) {
-
-            var item = cursor.next();
-
-            List<String> list = item.get("collections", List.class);
-
-            if (list.contains(collection)) {
-                log.info("skipping mongodb migration");
-                return;
-            }
-
-            log.info("populating collection : {}", collection);
-            migrate(item, collection);
-        } else {
-            migrate(null, collection);
-        }
+            migrate(collection);
     }
 
-    private void migrate(Document document, String collection) {
+    private void migrate(String collection) {
         populateSampleData();
 
-        if ( document != null ) {
-            List<String> list = document.get("collections", List.class);
-            list.add(collection);
-
-            mt.save(document, "migration");
-        } else {
             Migration migration = new Migration();
             migration.getCollections().add(collection);
             mt.save(migration);
-        }
     }
 
     protected abstract void populateSampleData() ;

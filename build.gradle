@@ -43,7 +43,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     implementation 'commons-io:commons-io:2.13.0'
 
-    implementation "org.neetome.cms:org.neetome.cms:1.0.6"
+    implementation "org.neetome.cms:org.neetome.cms:1.0.7"
 }
 
 test {

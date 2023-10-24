@@ -31,6 +31,12 @@ public class PracticeCollectionDataPopulator extends DataPopulator {
     }
 
     @Override
+    public void drop() {
+        repository.deleteAll();
+        qSetRepository.deleteAll();
+    }
+
+    @Override
     protected void populateSampleData() {
         PracticeCollection practiceDocument = new PracticeCollection();
         practiceDocument.setName("NTSE 2023 practice");
@@ -98,24 +104,22 @@ public class PracticeCollectionDataPopulator extends DataPopulator {
         q1.setText("Which of these is a full list of factors of 24?");
 
         OptionDoc op1 = OptionDoc.builder().value("24, 48, 72, 96").build();
-        OptionDoc op2 = OptionDoc.builder().value("1, 2, 3, 4, 6, 8, 12, 24").build();
+        OptionDoc op2 = OptionDoc.builder().value("1, 2, 3, 4, 6, 8, 12, 24").correct(true).build();
         OptionDoc op3 = OptionDoc.builder().value("0, 1, 2, 3, 4, 6, 8, 12, 24").build();
 
         q1.setExplanation("");
         q1.setOptions(List.of(op1,op2,op3));
-        q1.setAnswer(op2);
 
         QuestionDoc q2 = new QuestionDoc();
         q2.setId("64aaf814d88e9506fe950754::2");
         q2.setText("Which of these is a full list of the common factors of 12 and 30?");
 
-        OptionDoc q2Op1 = OptionDoc.builder().value("1, 2, 3, 4, 6").build();
+        OptionDoc q2Op1 = OptionDoc.builder().value("1, 2, 3, 4, 6").correct(true).build();
         OptionDoc q2Op2 = OptionDoc.builder().value("1, 2, 4, 6").build();
         OptionDoc q2Op3 = OptionDoc.builder().value("1, 2, 3, 6").build();
 
         q2.setExplanation("This is test explaination");
         q2.setOptions(List.of(q2Op1,q2Op2,q2Op3));
-        q2.setAnswer(q2Op1);
 
         questionSet.setQuestions(List.of(q1,q2));
 

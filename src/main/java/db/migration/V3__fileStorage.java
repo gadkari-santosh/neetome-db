@@ -25,6 +25,9 @@ public class V3__fileStorage extends BaseJavaMigration {
 
             File[] files = ResourceUtils.getFile("file:/file-storage").listFiles();
 
+            if ( files == null )
+                return;
+
             for ( File file : files ) {
                 insert.setString(1, file.getName());
 

@@ -39,6 +39,13 @@ public class AcademicsCollectionDataPopulator extends DataPopulator {
     }
 
     @Override
+    public void drop() {
+        repository.deleteAll();
+        questionSetCollectionRepository.deleteAll();
+        revisionCardsCollectionRepository.deleteAll();
+    }
+
+    @Override
     protected void populateSampleData() {
 
         String qs1Id = new ObjectId().toString();
@@ -101,8 +108,6 @@ public class AcademicsCollectionDataPopulator extends DataPopulator {
         LectureRefDoc ref = new LectureRefDoc();
         ref.setOrderId(1);
         ref.setTitle("The Fundamental Theorem of Arithmetic");
-        ref.setContentType(CONTENT_TYPE.FILE);
-        ref.setData("ceap110.pdf");
 
         topic1.setLectures(List.of(ref));
 
@@ -147,7 +152,7 @@ public class AcademicsCollectionDataPopulator extends DataPopulator {
 
     private SubjectDoc getEnglishSubject(String qs1Id,String qs2Id,String qs3Id,String qs4Id) {
         SubjectDoc subject = new SubjectDoc();
-        subject.setName(SUBJECT_NAME.MATHS);
+        subject.setName(SUBJECT_NAME.ENGLISH);
         subject.setId(new ObjectId().toString());
         subject.setIcon("english_subject.png");
 
@@ -217,12 +222,11 @@ public class AcademicsCollectionDataPopulator extends DataPopulator {
             q1.setText(MessageFormat.format(questionFormat, i, i+4));
 
             OptionDoc op1 = OptionDoc.builder().value(MessageFormat.format("{0}",2*i+2)).build();
-            OptionDoc op2 = OptionDoc.builder().value(MessageFormat.format("{0}",2*i+4)).build();
+            OptionDoc op2 = OptionDoc.builder().value(MessageFormat.format("{0}",2*i+4)).correct(true).build();
             OptionDoc op3 = OptionDoc.builder().value(MessageFormat.format("{0}",2*i+3)).build();
 
             q1.setExplanation("");
             q1.setOptions(List.of(op1, op2, op3));
-            q1.setAnswer(op2);
 
             questions.add(q1);
         }

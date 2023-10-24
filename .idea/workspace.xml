@@ -5,17 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ac082c3-40af-49ca-a898-4d3a846d6eca" name="Changes" comment="added mongodb migration">
-      <change afterPath="$PROJECT_DIR$/file-storage/ceap106.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-storage/ceap110.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-storage/ceap115.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-storage/english_subject.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file-storage/maths_subject.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file-storage/maths_1subject.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file-storage/r1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file-storage/r2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/file-storage/r3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-storage/maths_subject.png" beforeDir="false" afterPath="$PROJECT_DIR$/file-storage/maths_subject.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/ApplicationEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/ApplicationEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/neetome/db/config/FlywayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/neetome/db/config/FlywayConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/db/migration/V3__fileStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/migration/V3__fileStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/db/migration/nosql/AcademicsCollectionDataPopulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/migration/nosql/AcademicsCollectionDataPopulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/migration/nosql/DataPopulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/migration/nosql/DataPopulator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/db/migration/nosql/PracticeCollectionDataPopulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/migration/nosql/PracticeCollectionDataPopulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/ddl/V1__neetome-ddl.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/ddl/V1__neetome-ddl.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +103,7 @@
       <recent name="com.neetome.db.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager" selected="Gradle.neetome-db [build]">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.neetome.db.Application" />
       <module name="neetome-db.main" />
@@ -190,7 +194,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697392696662</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added mongodb migration">
+      <option name="closed" value="true" />
+      <created>1698052820154</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698052820154</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -215,6 +227,11 @@
           <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/6.0.8/b106774c7479059d6df1eccba22cbd2a2cfc1363/spring-core-6.0.8-sources.jar!/org/springframework/util/ResourceUtils.java</url>
           <line>171</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/db/migration/nosql/DataPopulator.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

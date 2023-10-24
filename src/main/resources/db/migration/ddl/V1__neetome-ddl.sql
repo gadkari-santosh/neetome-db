@@ -177,7 +177,5 @@ CREATE TABLE academics_board_tbl (
    CONSTRAINT pk_academics_board_tbl PRIMARY KEY (id)
 );
 
-alter table academics_board_tbl add column default_grade VARCHAR(100);
-
 update academics_board_tbl set default_grade='G_3';
 
