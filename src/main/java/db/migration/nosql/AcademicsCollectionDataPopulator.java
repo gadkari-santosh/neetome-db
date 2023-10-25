@@ -1,16 +1,15 @@
 package db.migration.nosql;
 
 import com.neetome.dao.entity.nosql.*;
+import com.neetome.dao.entity.nosql.collection.AcademicLectureCollection;
 import com.neetome.dao.entity.nosql.collection.AcademicsIndexCollection;
 import com.neetome.dao.entity.nosql.collection.AcademicsQuestionSetCollection;
 import com.neetome.dao.entity.nosql.collection.RevisionCardsCollection;
+import com.neetome.dao.repository.nosql.AcademicLectureCollectionRepository;
 import com.neetome.dao.repository.nosql.AcademicsIndexCollectionRepository;
 import com.neetome.dao.repository.nosql.AcademicsQuestionSetCollectionRepository;
 import com.neetome.dao.repository.nosql.RevisionCardsCollectionRepository;
-import com.neetome.dto.enums.CONTENT_TYPE;
-import com.neetome.dto.enums.DIFFICULTY_LEVEL;
-import com.neetome.dto.enums.GRADE;
-import com.neetome.dto.enums.SUBJECT_NAME;
+import com.neetome.dto.enums.*;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -30,6 +29,9 @@ public class AcademicsCollectionDataPopulator extends DataPopulator {
 
     @Autowired
     private AcademicsQuestionSetCollectionRepository questionSetCollectionRepository;
+
+    @Autowired
+    private AcademicLectureCollectionRepository lectureCollectionRepository;
 
     @Autowired
     private RevisionCardsCollectionRepository revisionCardsCollectionRepository;
@@ -105,9 +107,18 @@ public class AcademicsCollectionDataPopulator extends DataPopulator {
         topic1.setName("The Fundamental Theorem of Arithmetic");
         topic1.setQuestionSets(Arrays.asList(getQS(EASY,qs1Id)));
 
+        AcademicLectureCollection lectureCollection = new AcademicLectureCollection();
+        lectureCollection.setContentType(CONTENT_TYPE.PDF_FILE);
+        lectureCollection.setData("ceap115.pdf");
+        lectureCollection.setTitle("The Fundamental Theorem of Arithmetic");
+        lectureCollection.setMedium(MEDIUM.ENGLISH);
+
+        var savedCollection = lectureCollectionRepository.save(lectureCollection);
+
         LectureRefDoc ref = new LectureRefDoc();
         ref.setOrderId(1);
         ref.setTitle("The Fundamental Theorem of Arithmetic");
+        ref.setId(savedCollection.getId());
 
         topic1.setLectures(List.of(ref));
 
