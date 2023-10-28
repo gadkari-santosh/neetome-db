@@ -108,6 +108,7 @@ public class AcademicsCollectionDataPopulator extends DataPopulator {
         topic1.setQuestionSets(Arrays.asList(getQS(EASY,qs1Id)));
 
         AcademicLectureCollection lectureCollection = new AcademicLectureCollection();
+        lectureCollection.setGrade(GRADE.G_3);
         lectureCollection.setContentType(CONTENT_TYPE.PDF_FILE);
         lectureCollection.setData("ceap115.pdf");
         lectureCollection.setTitle("The Fundamental Theorem of Arithmetic");
@@ -231,6 +232,7 @@ public class AcademicsCollectionDataPopulator extends DataPopulator {
             QuestionDoc q1 = new QuestionDoc();
             q1.setId(new ObjectId().toString());
             q1.setText(MessageFormat.format(questionFormat, i, i+4));
+            q1.setQuestionType(QUESTION_TYPE.SINGLE_SELECT);
 
             OptionDoc op1 = OptionDoc.builder().value(MessageFormat.format("{0}",2*i+2)).build();
             OptionDoc op2 = OptionDoc.builder().value(MessageFormat.format("{0}",2*i+4)).correct(true).build();
