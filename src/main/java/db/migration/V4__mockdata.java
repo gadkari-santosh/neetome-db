@@ -25,7 +25,7 @@ public class V4__mockdata extends BaseJavaMigration {
     @Override
     public void migrate(Context context) throws Exception {
 
-        File dataFile = ResourceUtils.getFile("file:./src/main/resources/mockdata.csv");
+        File dataFile = ResourceUtils.getFile("file:/csv/mockdata.csv");
 
         CSVReader csvReader = new CSVReader(new FileReader(dataFile));
         csvReader.skip(1);

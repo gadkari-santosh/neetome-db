@@ -23,7 +23,7 @@ public class V5__mockExamBookingSlots extends BaseJavaMigration {
     @Override
     public void migrate(Context context) throws Exception {
 
-        File dataFile = ResourceUtils.getFile("file:./src/main/resources/mock-exam-booking-slots.csv");
+        File dataFile = ResourceUtils.getFile("file:/csv/mock-exam-booking-slots.csv");
 
         CSVReader csvReader = new CSVReader(new FileReader(dataFile));
         csvReader.skip(1);
