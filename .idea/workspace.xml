@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ac082c3-40af-49ca-a898-4d3a846d6eca" name="Changes" comment="added lecture ref">
+    <list default="true" id="7ac082c3-40af-49ca-a898-4d3a846d6eca" name="Changes" comment="fixed data">
+      <change afterPath="$PROJECT_DIR$/src/main/java/db/migration/V4__mockdata.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/db/migration/V5__mockExamBookingSlots.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mock-exam-booking-slots.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mockdata.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/deleted.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-storage/icse_board.png" beforeDir="false" afterPath="$PROJECT_DIR$/file-storage/icse_board.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/migration/V3__fileStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/migration/V3__fileStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/db/migration/nosql/AcademicsCollectionDataPopulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/migration/nosql/AcademicsCollectionDataPopulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/dml/V2__neetome_dml.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/dml/V2__neetome_dml.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,27 +68,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/santosh/IdeaProjects/neetome-db/file-storage&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/santosh/IdeaProjects/neetome-db/src/main/java/org/neetomi/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/santosh/IdeaProjects/neetome-db/src/main/resources",
+    "onboarding.tips.debug.path": "/Users/santosh/IdeaProjects/neetome-db/src/main/java/org/neetomi/Main.java",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/file-storage" />
       <recent name="$PROJECT_DIR$/src/main/java/com/neetome/db" />
       <recent name="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -89,13 +97,14 @@
       <recent name="$PROJECT_DIR$/src/main/resources/db/migration/ddl" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="db.migration" />
       <recent name="db.migration.nosql" />
       <recent name="com.neetome.db.repository.nosql" />
       <recent name="com.neetome.db.entity.nosql.enums" />
       <recent name="com.neetome.db.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager" selected="Gradle.neetome-db [build]">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.neetome.db.Application" />
       <module name="neetome-db.main" />
@@ -210,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698229996352</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fixed data">
+      <option name="closed" value="true" />
+      <created>1698494449492</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1698494449492</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -227,7 +244,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added mongodb migration" />
     <MESSAGE value="added lecture ref" />
-    <option name="LAST_COMMIT_MESSAGE" value="added lecture ref" />
+    <MESSAGE value="fixed data" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed data" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -236,11 +254,6 @@
           <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/6.0.8/b106774c7479059d6df1eccba22cbd2a2cfc1363/spring-core-6.0.8-sources.jar!/org/springframework/util/ResourceUtils.java</url>
           <line>171</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/db/migration/nosql/DataPopulator.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

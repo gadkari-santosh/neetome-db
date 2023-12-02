@@ -43,6 +43,7 @@ public class AcademicsCollectionDataPopulator extends DataPopulator {
     @Override
     public void drop() {
         repository.deleteAll();
+        lectureCollectionRepository.deleteAll();
         questionSetCollectionRepository.deleteAll();
         revisionCardsCollectionRepository.deleteAll();
     }
@@ -94,6 +95,8 @@ public class AcademicsCollectionDataPopulator extends DataPopulator {
         chapter1.setId("1");
         chapter1.setName("Real Numbers");
 
+        chapter1.setPracticeCards(Arrays.asList(getPS(EASY,qs1Id)));
+
         var rId = new ObjectId();
         var rcollection = getRevisionCards(rId.toString(),"Real Numbers", SUBJECT_NAME.MATHS);
         revisionCardsCollectionRepository.save(rcollection);
@@ -136,6 +139,8 @@ public class AcademicsCollectionDataPopulator extends DataPopulator {
         chapter2.setId("2");
         chapter2.setName("Polynomials");
 
+        chapter2.setPracticeCards(Arrays.asList(getPS(EASY,qs3Id)));
+
         RevisionCardRefDoc refDoc2 = new RevisionCardRefDoc();
         refDoc2.setId(rId.toString());
         refDoc2.setTitle("Polynomials");
@@ -172,6 +177,8 @@ public class AcademicsCollectionDataPopulator extends DataPopulator {
         chapter1.setId("1");
         chapter1.setName("Real Numbers");
 
+        chapter1.setPracticeCards(Arrays.asList(getPS(EASY,qs1Id)));
+
         TopicDoc topic1 = new TopicDoc();
         topic1.setId("1.1");
         topic1.setName("The Fundamental Theorem of Arithmetic");
@@ -199,6 +206,7 @@ public class AcademicsCollectionDataPopulator extends DataPopulator {
         topic22.setQuestionSets(Arrays.asList(getQS(EASY,qs4Id)));
 
         chapter2.setTopics(Arrays.asList(topic21, topic22));
+        chapter2.setPracticeCards(Arrays.asList(getPS(EASY,qs4Id)));
 
         subject.setChapters(Arrays.asList(chapter1, chapter2));
 
@@ -209,6 +217,14 @@ public class AcademicsCollectionDataPopulator extends DataPopulator {
         QuestionSetInfoDoc questionSetInfo = new QuestionSetInfoDoc();
         questionSetInfo.setId(id);
         questionSetInfo.setName("Set ("+level+")");
+
+        return questionSetInfo;
+    }
+
+    private PracticeCardRefDoc getPS(DIFFICULTY_LEVEL level, String id) {
+        PracticeCardRefDoc questionSetInfo = new PracticeCardRefDoc();
+        questionSetInfo.setId(id);
+        questionSetInfo.setTitle("Test ("+level+")");
 
         return questionSetInfo;
     }
