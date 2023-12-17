@@ -7,11 +7,9 @@
     <list default="true" id="7ac082c3-40af-49ca-a898-4d3a846d6eca" name="Changes" comment="added mocktest data">
       <change afterPath="$PROJECT_DIR$/src/test/resources/deleted.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/db/migration/V4__mockdata.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/migration/V4__mockdata.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/db/migration/V5__mockExamBookingSlots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/migration/V5__mockExamBookingSlots.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mock-exam-booking-slots.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/mock-exam-booking-slots.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mockdata.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/mockdata.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/file-storage/english_subject.png" beforeDir="false" afterPath="$PROJECT_DIR$/file-storage/english_subject.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/ddl/V1__neetome-ddl.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/ddl/V1__neetome-ddl.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/dml/V2__neetome_dml.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/dml/V2__neetome_dml.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +68,8 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/Users/santosh/IdeaProjects/neetome-db/src/main/resources",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/santosh/IdeaProjects/neetome-db/file-storage",
     "onboarding.tips.debug.path": "/Users/santosh/IdeaProjects/neetome-db/src/main/java/org/neetomi/Main.java",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
@@ -81,8 +80,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/file-storage" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/main/java/com/neetome/db" />
       <recent name="$PROJECT_DIR$/src/main/java/com/neetome/db/entity/nosql" />
       <recent name="$PROJECT_DIR$" />
@@ -167,6 +166,13 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-249ae16d76d6-af57353a" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -232,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701477656686</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added mocktest data">
+      <option name="closed" value="true" />
+      <created>1701478642859</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701478642859</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">

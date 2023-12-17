@@ -179,3 +179,16 @@ CREATE TABLE academics_board_tbl (
 
 update academics_board_tbl set default_grade='G_3';
 
+CREATE TABLE nitome_config_tbl (
+   id int NOT NULL AUTO_INCREMENT,
+   prop_name VARCHAR(255) NULL,
+   prop_value VARCHAR(255) NULL,
+   description VARCHAR(255) NULL,
+   is_active BIT(1) NULL,
+   created_by VARCHAR(255) NULL,
+   created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   CONSTRAINT pk_nitome_config_tbl PRIMARY KEY (id),
+   CONSTRAINT uq_nitome_confgi_tbl UNIQUE (prop_name, is_active)
+
+);
+

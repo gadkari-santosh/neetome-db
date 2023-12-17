@@ -296,6 +296,8 @@ values (2,'ICSE','icse_board.png','Indian Certificate of Secondary Education','C
 insert into academics_board_tbl (id,name,img_name,description,authority,grades,is_active,created_on,created_by)
 values (3,'SSC','ssc_board.png','The Maharashtra State Board of Secondary and Higher Secondary Education','Maharashtra state govt','G_1,G_2,G_3','1',CURRENT_TIMESTAMP(),'test-tool');
 
+insert into nitome_config_tbl (prop_name, prop_value,description,is_active,created_by) values ('db.mocks.price.range','100,200,300','price range for mock exams',1,'test-tool');
+insert into nitome_config_tbl (prop_name, prop_value,description,is_active,created_by) values ('db.currency','INR','default currency',1,'test-tool');
 
 
 
