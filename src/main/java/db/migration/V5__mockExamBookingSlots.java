@@ -17,8 +17,8 @@ import java.util.Date;
 public class V5__mockExamBookingSlots extends BaseJavaMigration {
 
     private String prepareStatement = "INSERT INTO mock_exam_booking_slot_tbl " +
-            "(mock_exam_id,total_capacity,total_booked,is_open,is_cancelled,start_time,reporting_time,end_time,price,created_on,created_by)" +
-            "VALUES (?,?,?,?,?,?,?,?,?,CURRENT_TIMESTAMP(),'test-tool')";
+            "(mock_exam_id,total_capacity,total_booked,is_open,is_cancelled,start_time,reporting_time,end_time,created_on,created_by)" +
+            "VALUES (?,?,?,?,?,?,?,?,CURRENT_TIMESTAMP(),'test-tool')";
 
     @Override
     public void migrate(Context context) throws Exception {
@@ -48,7 +48,6 @@ public class V5__mockExamBookingSlots extends BaseJavaMigration {
                 statement.setString(6, line[5]); // start_time
                 statement.setString(7, line[6]); // reporting_time
                 statement.setString(8, line[7]); // end_time
-                statement.setDouble(9, Double.parseDouble(line[8])); // price
 
 
                 statement.addBatch();

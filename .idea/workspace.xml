@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ac082c3-40af-49ca-a898-4d3a846d6eca" name="Changes" comment="added mocktest data">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/deleted.sql" afterDir="false" />
+    <list default="true" id="7ac082c3-40af-49ca-a898-4d3a846d6eca" name="Changes" comment="added config table &amp; updated subject icons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file-storage/english_subject.png" beforeDir="false" afterPath="$PROJECT_DIR$/file-storage/english_subject.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv/mock-exam-booking-slots.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/mock-exam-booking-slots.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv/mockdata.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/mockdata.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/migration/V4__mockdata.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/migration/V4__mockdata.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/migration/V5__mockExamBookingSlots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/migration/V5__mockExamBookingSlots.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/migration/nosql/AcademicsCollectionDataPopulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/migration/nosql/AcademicsCollectionDataPopulator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/ddl/V1__neetome-ddl.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/ddl/V1__neetome-ddl.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/dml/V2__neetome_dml.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/dml/V2__neetome_dml.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +32,23 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="neetome-db" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="neetome-db" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="neetome-db" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -63,6 +82,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.neetome-db [:Application.main()].executor": "Run",
+    "Gradle.neetome-db [build].executor": "Run",
+    "Gradle.neetome-db [clean].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -100,7 +122,7 @@
       <recent name="com.neetome.db.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.neetome-db [build]">
+  <component name="RunManager" selected="Application.Application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.neetome.db.Application" />
       <module name="neetome-db.main" />
@@ -246,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701478642859</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added config table &amp; updated subject icons">
+      <option name="closed" value="true" />
+      <created>1702835252519</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1702835252519</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -265,7 +295,8 @@
     <MESSAGE value="added lecture ref" />
     <MESSAGE value="fixed data" />
     <MESSAGE value="added mocktest data" />
-    <option name="LAST_COMMIT_MESSAGE" value="added mocktest data" />
+    <MESSAGE value="added config table &amp; updated subject icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="added config table &amp; updated subject icons" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

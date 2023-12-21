@@ -1,5 +1,6 @@
 package db.migration.nosql;
 
+
 import com.neetome.dao.entity.nosql.*;
 import com.neetome.dao.entity.nosql.collection.AcademicLectureCollection;
 import com.neetome.dao.entity.nosql.collection.AcademicsIndexCollection;
@@ -85,9 +86,10 @@ public class AcademicsCollectionDataPopulator extends DataPopulator {
         return revisionCardsCollection;
     }
 
-    private SubjectDoc getMathSubject(String qs1Id,String qs2Id,String qs3Id,String qs4Id) {
+    private SubjectDoc getMathSubject(String qs1Id, String qs2Id, String qs3Id, String qs4Id) {
         SubjectDoc subject = new SubjectDoc();
         subject.setName(SUBJECT_NAME.MATHS);
+
         subject.setId(new ObjectId().toString());
         subject.setIcon("maths_subject.png");
 
