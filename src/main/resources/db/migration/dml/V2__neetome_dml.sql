@@ -254,24 +254,24 @@ INSERT INTO `exam_reg_info_tbl` (`id`,`exam_id`,`grade`,`exam_dt`,`exam_time`,`r
 VALUES (4,1004,'G_4','2023-12-25','10:45:45','2023-12-25','1','2023-06-25',CURRENT_TIMESTAMP(),'test-tool');
 
 
-INSERT INTO `past_papers_tbl` (`id`,`exam_id`,`author_id`,`image`,`description`,`subject`,`grade`,`avg_rating`,`offering`,`front_runner`) VALUES
-(1,1014,1,'marha.png','100+ questions set for maths','MATHS','G_6',4.0,'PAID','1');
-INSERT INTO `past_papers_tbl` (`id`,`exam_id`,`author_id`,`image`,`description`,`subject`,`grade`,`avg_rating`,`offering`,`front_runner`) VALUES
-(2,1015,1,'drhbbvc.png','Exam oriented practice questions','MATHS','G_6',5.0,'PAID','1');
-INSERT INTO `past_papers_tbl` (`id`,`exam_id`,`author_id`,`image`,`description`,`subject`,`grade`,`avg_rating`,`offering`,`front_runner`) VALUES
-(3,1001,1,'sof-nco.png','Best seller ! complete practice questions.','MATHS','G_5',4.0,'PAID','1');
-INSERT INTO `past_papers_tbl` (`id`,`exam_id`,`author_id`,`image`,`description`,`subject`,`grade`,`avg_rating`,`offering`,`front_runner`) VALUES
-(4,1009,1,'nstse.png','1000+ practice questions.','MATHS','G_4',3.0,'PAID','1');
+INSERT INTO `question_papers_tbl` (`id`,`exam_id`,`author_id`,`image`,`name`,`subjects`,`grade`,`offering`,`display_order`) VALUES
+(1,1014,1,'marha.png','100+ questions set for maths','MATHS','G_6','PAID','1');
+INSERT INTO `question_papers_tbl` (`id`,`exam_id`,`author_id`,`image`,`name`,`subjects`,`grade`,`offering`,`display_order`) VALUES
+(2,1015,1,'drhbbvc.png','Exam oriented practice questions','MATHS','G_6','PAID','1');
+INSERT INTO `question_papers_tbl` (`id`,`exam_id`,`author_id`,`image`,`name`,`subjects`,`grade`,`offering`,`display_order`) VALUES
+(3,1001,1,'sof-nco.png','Best seller ! complete practice questions.','MATHS','G_5','PAID','1');
+INSERT INTO `question_papers_tbl` (`id`,`exam_id`,`author_id`,`image`,`name`,`subjects`,`grade`,`offering`,`display_order`) VALUES
+(4,1009,1,'nstse.png','1000+ practice questions.','MATHS','G_4','PAID','1');
 
 
-INSERT INTO `practice_tbl` (`id`,`exam_id`,`author_id`,`image`,`name`,`subjects`,`grade`,`avg_rating`,`offering`,`is_active`,`rank`) VALUES
-(1,1014,1,'marha.png','100+ questions set for maths','MATHS','G_5',3.6,'PAID','1',1);
-INSERT INTO `practice_tbl` (`id`,`exam_id`,`author_id`,`image`,`name`,`subjects`,`grade`,`avg_rating`,`offering`,`is_active`,`rank`) VALUES
-(2,1015,1,'drhbbvc.png','Exam oriented practice questions','MATHS','G_6',4.2,'PAID','1',2);
-INSERT INTO `practice_tbl` (`id`,`exam_id`,`author_id`,`image`,`name`,`subjects`,`grade`,`avg_rating`,`offering`,`is_active`,`rank`) VALUES
-(3,1001,1,'sof-nco.png','Best seller ! complete practice questions.','MATHS','G_3',4.3,'PAID','1',3);
-INSERT INTO `practice_tbl` (`id`,`exam_id`,`author_id`,`image`,`name`,`subjects`,`grade`,`avg_rating`,`offering`,`is_active`,`rank`) VALUES
-(4,1009,1,'nstse.png','1000+ practice questions.','MATHS','G_4',4.1,'PAID','1',4);
+INSERT INTO `practice_tbl` (`id`,`exam_id`,`author_id`,`image`,`name`,`subjects`,`grade`,`offering`,`is_active`,`display_order`) VALUES
+(1,1014,1,'marha.png','100+ questions set for maths','MATHS','G_5','PAID','1',1);
+INSERT INTO `practice_tbl` (`id`,`exam_id`,`author_id`,`image`,`name`,`subjects`,`grade`,`offering`,`is_active`,`display_order`) VALUES
+(2,1015,1,'drhbbvc.png','Exam oriented practice questions','SCIENCE','G_6','PAID','1',2);
+INSERT INTO `practice_tbl` (`id`,`exam_id`,`author_id`,`image`,`name`,`subjects`,`grade`,`offering`,`is_active`,`display_order`) VALUES
+(3,1001,1,'sof-nco.png','Best seller ! complete practice questions.','COMPUTER','G_3','PAID','1',3);
+INSERT INTO `practice_tbl` (`id`,`exam_id`,`author_id`,`image`,`name`,`subjects`,`grade`,`offering`,`is_active`,`display_order`) VALUES
+(4,1009,1,'nstse.png','1000+ practice questions.','MATHS','G_4','PAID','1',4);
 
 
 INSERT INTO `testimony_tbl` (`id`,`rating`,`created_by`,`created_ts`,`cust_profile`,`cust_name`,`location`,`testimony`) VALUES
@@ -298,6 +298,21 @@ values (3,'SSC','ssc_board.png','The Maharashtra State Board of Secondary and Hi
 
 insert into nitome_config_tbl (prop_name, prop_value,description,is_active,created_by) values ('db.mocks.price.range','100,200,300','price range for mock exams',1,'test-tool');
 insert into nitome_config_tbl (prop_name, prop_value,description,is_active,created_by) values ('db.currency','INR','default currency',1,'test-tool');
+
+insert into user_reviews_tbl (headline,rating,ref_id,review,status,tag,user_id,user_name) values ('Great !',5,1,'amazing app','APPROVED','PRACTICE',1,'Santosh');
+insert into user_reviews_tbl (headline,rating,ref_id,review,status,tag,user_id,user_name) values ('Great !',5,1,'amazing app','APPROVED','PRACTICE',2,'Santosh');
+insert into user_reviews_tbl (headline,rating,ref_id,review,status,tag,user_id,user_name) values ('Great !',5,1,'amazing app','APPROVED','PRACTICE',3,'Santosh');
+insert into user_reviews_tbl (headline,rating,ref_id,review,status,tag,user_id,user_name) values ('Great !',5,1,'amazing app','APPROVED','PRACTICE',4,'Santosh');
+insert into practice_reviews_tbl (avg_rating,ref_id,r_1,r_2,r_3,r_4,r_5,total_reviews) values (5.0,1,0,0,0,0,1,1);
+insert into practice_reviews_tbl (avg_rating,ref_id,r_1,r_2,r_3,r_4,r_5,total_reviews) values (5.0,2,0,0,0,0,1,1);
+insert into practice_reviews_tbl (avg_rating,ref_id,r_1,r_2,r_3,r_4,r_5,total_reviews) values (5.0,3,0,0,0,0,1,1);
+insert into practice_reviews_tbl (avg_rating,ref_id,r_1,r_2,r_3,r_4,r_5,total_reviews) values (5.0,4,0,0,0,0,1,1);
+
+insert into qpapers_reviews_tbl (avg_rating,ref_id,r_1,r_2,r_3,r_4,r_5,total_reviews) values (5.0,1,0,0,0,0,1,1);
+insert into qpapers_reviews_tbl (avg_rating,ref_id,r_1,r_2,r_3,r_4,r_5,total_reviews) values (5.0,2,0,0,0,0,1,1);
+insert into qpapers_reviews_tbl (avg_rating,ref_id,r_1,r_2,r_3,r_4,r_5,total_reviews) values (5.0,3,0,0,0,0,1,1);
+insert into qpapers_reviews_tbl (avg_rating,ref_id,r_1,r_2,r_3,r_4,r_5,total_reviews) values (5.0,4,0,0,0,0,1,1);
+
 
 
 

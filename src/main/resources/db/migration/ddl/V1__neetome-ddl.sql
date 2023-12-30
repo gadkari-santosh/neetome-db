@@ -110,18 +110,16 @@ ALTER TABLE mock_exam_booking_slot_tbl ADD CONSTRAINT FK_MOCK_EXAM_BOOKING_SLOT_
 -- practice table
 CREATE TABLE practice_tbl (
    id BIGINT NOT NULL AUTO_INCREMENT,
-   ref VARCHAR(100),
    name NVARCHAR(255) NULL,
    exam_id BIGINT NULL,
    author_id BIGINT NULL,
    image VARCHAR(255) NULL,
    subjects VARCHAR(1000) NULL,
    grade VARCHAR(255) NULL,
-   avg_rating DOUBLE NULL,
    offering VARCHAR(255) NULL,
    is_active TINYINT(1) NOT NULL default 0,
-   `rank` INT NULL,
-   CONSTRAINT pk_practice_test_tbl PRIMARY KEY (id)
+   display_order INT NULL,
+   CONSTRAINT pk_practice_test_booklet_tbl PRIMARY KEY (id)
 );
 
 ALTER TABLE practice_tbl ADD CONSTRAINT FK_PRACTICE_TBL_ON_AUTHORENTITY FOREIGN KEY (author_id) REFERENCES author_tbl (id);
@@ -129,23 +127,23 @@ ALTER TABLE practice_tbl ADD CONSTRAINT FK_PRACTICE_TBL_ON_AUTHORENTITY FOREIGN 
 ALTER TABLE practice_tbl ADD CONSTRAINT FK_PRACTICE_TBL_ON_EXAMENTITY FOREIGN KEY (exam_id) REFERENCES exam_tbl (id);
 
 -- past papers table
-CREATE TABLE past_papers_tbl (
+CREATE TABLE question_papers_tbl (
   id BIGINT NOT NULL AUTO_INCREMENT,
+  name NVARCHAR(255) NULL,
    exam_id BIGINT NULL,
    author_id BIGINT NULL,
    image VARCHAR(255) NULL,
-   `description` VARCHAR(255) NULL,
-   subject VARCHAR(1000) NULL,
+   subjects VARCHAR(1000) NULL,
    grade VARCHAR(255) NULL,
-   avg_rating DECIMAL NULL,
    offering VARCHAR(255) NULL,
-   front_runner TINYINT(1) NULL,
-   CONSTRAINT pk_past_papers_tbl PRIMARY KEY (id)
+   is_active TINYINT(1) NOT NULL default 0,
+   display_order TINYINT(1) NULL,
+   CONSTRAINT pk_question_papers_tbl PRIMARY KEY (id)
 );
 
-ALTER TABLE past_papers_tbl ADD CONSTRAINT FK_PAST_PAPERS_TBL_ON_AUTHORENTITY FOREIGN KEY (author_id) REFERENCES author_tbl (id);
+ALTER TABLE question_papers_tbl ADD CONSTRAINT FK_QUESTION_PAPERS_TBL_ON_AUTHORENTITY FOREIGN KEY (author_id) REFERENCES author_tbl (id);
 
-ALTER TABLE past_papers_tbl ADD CONSTRAINT FK_PAST_PAPERS_TBL_ON_EXAMENTITY FOREIGN KEY (exam_id) REFERENCES exam_tbl (id);
+ALTER TABLE question_papers_tbl ADD CONSTRAINT FK_QUESTION_PAPERS_TBL_ON_EXAMENTITY FOREIGN KEY (exam_id) REFERENCES exam_tbl (id);
 
 
 -- testimony table
@@ -191,4 +189,56 @@ CREATE TABLE nitome_config_tbl (
    CONSTRAINT uq_nitome_confgi_tbl UNIQUE (prop_name, is_active)
 
 );
+
+CREATE TABLE user_reviews_tbl (
+  id BIGINT AUTO_INCREMENT NOT NULL,
+   ref_id BIGINT NULL,
+   rating INT NULL,
+   headline VARCHAR(255) NULL,
+   review VARCHAR(255) NULL,
+   user_id BIGINT NULL,
+   user_name VARCHAR(255) NULL,
+   tag VARCHAR(255) NOT NULL,
+   status VARCHAR(255) NULL,
+   updated_on datetime NULL,
+   created_on datetime NULL,
+   CONSTRAINT pk_user_reviews_tbl PRIMARY KEY (id)
+);
+
+CREATE TABLE practice_reviews_tbl (
+  id BIGINT AUTO_INCREMENT NOT NULL,
+   avg_rating FLOAT NULL,
+   total_reviews BIGINT NULL,
+   r_1 BIGINT NULL,
+   r_2 BIGINT NULL,
+   r_3 BIGINT NULL,
+   r_4 BIGINT NULL,
+   r_5 BIGINT NULL,
+   updated_on datetime NULL,
+   ref_id BIGINT NULL,
+   CONSTRAINT pk_practice_reviews_tbl PRIMARY KEY (id)
+);
+
+ALTER TABLE practice_reviews_tbl ADD CONSTRAINT uc_practice_reviews_tbl_practice UNIQUE (ref_id);
+
+ALTER TABLE practice_reviews_tbl ADD CONSTRAINT FK_PRACTICE_REVIEWS_TBL_ON_PRACTICE FOREIGN KEY (ref_id) REFERENCES practice_tbl (id);
+
+CREATE TABLE qpapers_reviews_tbl (
+  id BIGINT AUTO_INCREMENT NOT NULL,
+   avg_rating FLOAT NULL,
+   total_reviews BIGINT NULL,
+   r_1 BIGINT NULL,
+   r_2 BIGINT NULL,
+   r_3 BIGINT NULL,
+   r_4 BIGINT NULL,
+   r_5 BIGINT NULL,
+   updated_on datetime NULL,
+   ref_id BIGINT NULL,
+   CONSTRAINT pk_practice_reviews_tbl PRIMARY KEY (id)
+);
+
+ALTER TABLE qpapers_reviews_tbl ADD CONSTRAINT uc_qpapers_reviews_tble UNIQUE (ref_id);
+
+ALTER TABLE qpapers_reviews_tbl ADD CONSTRAINT FK_QPAPERS_REVIEWS_TBL_ON_PRACTICE FOREIGN KEY (ref_id) REFERENCES question_papers_tbl (id);
+
 
