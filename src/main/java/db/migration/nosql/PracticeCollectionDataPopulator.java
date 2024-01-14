@@ -9,10 +9,16 @@ import com.neetome.dto.enums.DIFFICULTY_LEVEL;
 import com.neetome.dto.enums.GRADE;
 import com.neetome.dto.enums.SUBJECT_NAME;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.FileUtils;
+import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.util.ResourceUtils;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -22,6 +28,9 @@ public class PracticeCollectionDataPopulator extends DataPopulator {
 
     @Autowired
     private PracticeCollectionRepository repository;
+
+    @Autowired
+    private MongoTemplate mongo;
 
     @Autowired
     private PracticeQuestionSetCollectionRepository qSetRepository;
@@ -38,6 +47,33 @@ public class PracticeCollectionDataPopulator extends DataPopulator {
 
     @Override
     protected void populateSampleData() {
+
+        try {
+
+            mongo.dropCollection("practiceTestBooklets");
+            mongo.dropCollection("practiceQuestionSet");
+
+            String json = FileUtils.readFileToString(
+                    ResourceUtils.getFile("file:/nosql/practice_collection1.json"));
+
+            var doc = Document.parse(json);
+            mongo.insert(doc, "practiceTestBooklets");
+
+
+            String[] qss = new String[] {"practice_qs1.json","practice_qs2.json","practice_qs3.json","practice_qs4.json"};
+            for (String qs : qss ) {
+                String json1 = FileUtils.readFileToString(
+                        ResourceUtils.getFile("file:/nosql/"+qs));
+                var doc1 = Document.parse(json1);
+                mongo.insert(doc1, "practiceQuestionSet");
+            }
+
+        } catch (Exception e) {
+            log.error("Unable to store data into practice collection", e);
+        }
+    }
+
+    protected void populateSampleData1() {
         PracticeCollection practiceDocument = new PracticeCollection();
         practiceDocument.setName("NTSE 2023 practice");
         practiceDocument.setDescription("1000+ question set for scholership exam");

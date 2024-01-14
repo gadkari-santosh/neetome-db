@@ -1,0 +1,41 @@
+{
+  "practiceTestId" : 1,
+  "questionSetId": "656a809564fb673960a95540",
+  "questions" : [
+    {
+      "_id" : "64aaf814d88e9506fe950754::1",
+      "text" : "Which of these is a full list of factors of 24?",
+      "explanation" : "",
+      "options" : [
+        {
+          "value" : "24, 48, 72, 96"
+        },
+        {
+          "value" : "1, 2, 3, 4, 6, 8, 12, 24",
+          "correct" : true
+        },
+        {
+          "value" : "0, 1, 2, 3, 4, 6, 8, 12, 24"
+        }
+      ]
+    },
+    {
+      "_id" : "64aaf814d88e9506fe950754::2",
+      "text" : "Which of these is a full list of the common factors of 12 and 30?",
+      "explanation" : "This is test explaination",
+      "options" : [
+        {
+          "value" : "1, 2, 3, 4, 6",
+          "correct" : true
+        },
+        {
+          "value" : "1, 2, 4, 6"
+        },
+        {
+          "value" : "1, 2, 3, 6"
+        }
+      ]
+    }
+  ],
+  "_class" : "com.neetome.dao.entity.nosql.collection.PracticeQuestionSetCollection"
+}

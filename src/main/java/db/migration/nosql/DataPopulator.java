@@ -5,6 +5,7 @@ import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
 @Slf4j

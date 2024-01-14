@@ -1,0 +1,74 @@
+{
+  "_id" : ObjectId("6587166259b799549ec79218"),
+  "practiceId" : 1,
+  "name" : "NTSE 2023 practice",
+  "description" : "1000+ question set for scholership exam",
+  "image" : "ntst.png",
+  "grade" : "G_2",
+  "examId" : 3,
+  "authorId" : 1,
+  "subjects" : [
+    {
+      "name" : "MATHS",
+      "chapters" : [
+        {
+          "order" : 1,
+          "name" : "Factors & Percentage",
+          "weightage" : 10.0,
+          "tests" : [
+            {
+              "_id" : "656a809564fb673960a95540",
+              "title" : "Easy Set",
+              "orderId" : 1,
+              "questionSetSize" : 10,
+              "marks" : 100,
+              "durationInMin" : 60,
+              "negativeMarking" : false
+            },
+            {
+              "_id" : "656a809564fb673960a95541",
+              "orderId" : 2,
+              "title" : "Easy Set",
+              "questionSetSize" : 10,
+              "marks" : 100,
+              "durationInMin" : 60,
+              "negativeMarking" : false
+            }
+          ]
+        },
+        {
+          "order" : 2,
+          "name" : "Numbers",
+          "weightage" : 25.0,
+          "tests" : [
+            {
+              "_id" : "656a809564fb673960a95542",
+              "title" : "Easy Set",
+              "orderId" : 1,
+              "questionSetSize" : 10,
+              "marks" : 100,
+              "durationInMin" : 60,
+              "negativeMarking" : false
+            },
+            {
+              "_id" : "656a809564fb673960a95543",
+              "title" : "Hard Set",
+              "orderId" : 2,
+              "questionSetSize" : 10,
+              "marks" : 100,
+              "durationInMin" : 60,
+              "negativeMarking" : false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "features" : [
+    "all maths chapters coverd",
+    "100+ questions"
+  ],
+  "exams" : [
+
+  ]
+}

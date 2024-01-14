@@ -62,31 +62,52 @@ CREATE TABLE file_storage_tbl (
    CONSTRAINT pk_file_storage_tbl PRIMARY KEY (id)
 );
 
+CREATE TABLE exam_centre_tbl (
+  id BIGINT AUTO_INCREMENT NOT NULL,
+   centre_name VARCHAR(255) NULL,
+   addr_line1 VARCHAR(255) NULL,
+   addr_line2 VARCHAR(255) NULL,
+   pincode VARCHAR(255) NULL,
+   city VARCHAR(255) NULL,
+   state VARCHAR(255) NULL,
+   phone1 VARCHAR(255) NULL,
+   phone2 VARCHAR(255) NULL,
+   email VARCHAR(255) NULL,
+   contact_name1 VARCHAR(255) NULL,
+   contact_name2 VARCHAR(255) NULL,
+   created_by VARCHAR(255) NULL,
+   created_on datetime NULL,
+   updated_by VARCHAR(255) NULL,
+   updated_on datetime NULL,
+   CONSTRAINT pk_exam_centre_tbl PRIMARY KEY (id)
+);
+
 -- mock exam
 CREATE TABLE mock_exam_tbl (
   id BIGINT NOT NULL AUTO_INCREMENT,
    img_name VARCHAR(255) NULL,
    author_id BIGINT NULL,
    exam_id BIGINT NULL,
+   exam_centre_id BIGINT NULL,
    is_active TINYINT(1) NOT NULL,
    exam_dt date NULL,
    exam_duration BIGINT NOT NULL,
    mode VARCHAR(255) NULL,
-   full_addr VARCHAR(2000) NULL,
-   city VARCHAR(255) NULL,
-   short_addr VARCHAR(255) NULL,
-   contact_phone VARCHAR(255) NULL,
-   contact_name VARCHAR(255) NULL,
    grade VARCHAR(20) NULL,
    price double NOT NULL,
-   created_on datetime NULL,
    created_by VARCHAR(255) NULL,
+   created_on datetime NULL,
+   updated_by VARCHAR(255) NULL,
+   updated_on datetime NULL,
    CONSTRAINT pk_mock_exam_tbl PRIMARY KEY (id)
 );
 
 ALTER TABLE mock_exam_tbl ADD CONSTRAINT FK_MOCK_EXAM_TBL_ON_AUTHORENTITY FOREIGN KEY (author_id) REFERENCES author_tbl (id);
 
 ALTER TABLE mock_exam_tbl ADD CONSTRAINT FK_MOCK_EXAM_TBL_ON_EXAMENTITY FOREIGN KEY (exam_id) REFERENCES exam_tbl (id);
+
+ALTER TABLE mock_exam_tbl ADD CONSTRAINT FK_MOCK_EXAM_TBL_ON_EXAMCENTREENTITY FOREIGN KEY (exam_centre_id) REFERENCES exam_centre_tbl (id);
+
 
 -- Mock exam booking slots
 CREATE TABLE mock_exam_booking_slot_tbl (
@@ -240,5 +261,30 @@ CREATE TABLE qpapers_reviews_tbl (
 ALTER TABLE qpapers_reviews_tbl ADD CONSTRAINT uc_qpapers_reviews_tble UNIQUE (ref_id);
 
 ALTER TABLE qpapers_reviews_tbl ADD CONSTRAINT FK_QPAPERS_REVIEWS_TBL_ON_PRACTICE FOREIGN KEY (ref_id) REFERENCES question_papers_tbl (id);
+
+CREATE TABLE user_tbl (
+  id BIGINT AUTO_INCREMENT NOT NULL,
+   user_name VARCHAR(255) NULL,
+   type VARCHAR(255) NULL,
+   status VARCHAR(255) NULL,
+   subscription_type VARCHAR(255) NULL,
+   last_access datetime NULL,
+   created_time datetime NULL,
+   CONSTRAINT pk_user_tbl PRIMARY KEY (id)
+);
+
+CREATE TABLE user_profile_tbl (
+  id BIGINT AUTO_INCREMENT NOT NULL,
+   name VARCHAR(255) NULL,
+   grade SMALLINT NULL,
+   school_name VARCHAR(255) NULL,
+   board_id BIGINT NULL,
+   user_id BIGINT NULL,
+   CONSTRAINT pk_user_profile_tbl PRIMARY KEY (id)
+);
+
+ALTER TABLE user_profile_tbl ADD CONSTRAINT FK_USER_PROFILE_TBL_ON_BOARD FOREIGN KEY (board_id) REFERENCES academics_board_tbl (id);
+
+ALTER TABLE user_profile_tbl ADD CONSTRAINT FK_USER_PROFILE_TBL_ON_USER FOREIGN KEY (user_id) REFERENCES user_tbl (id);
 
 

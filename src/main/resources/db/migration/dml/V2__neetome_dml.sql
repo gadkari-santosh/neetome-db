@@ -1,6 +1,10 @@
 
 INSERT INTO `author_tbl` (`id`,`name`,`description`,`address`,`p_contact`,`s_contact`,`email`,`created_on`,`created_by`) VALUES (1,'Gadkari eduction pvt. ltd','Specialise in SSC board exams','Baner Pune','+91 8983353453','+91 935739047','gadkari.classes@gmail.com','2023-07-02 09:03:03','test-tool');
 INSERT INTO `author_tbl` (`id`,`name`,`description`,`address`,`p_contact`,`s_contact`,`email`,`created_on`,`created_by`) VALUES (2,'Dhruv Bhatia education institute','We specialize in Olympiad exams','Kota Rajasthan','+91 8983353453','+91 935739047','dhruv.inst@gmail.com','2023-07-02 09:03:03','test-tool');
+INSERT INTO `author_tbl` (`id`,`name`,`description`,`address`,`p_contact`,`s_contact`,`email`,`created_on`,`created_by`) VALUES (3,'Gadkari eduction pvt. ltd','Specialise in SSC board exams','Baner Pune','+91 8983353453','+91 935739047','gadkari.classes@gmail.com','2023-07-02 09:03:03','test-tool');
+INSERT INTO `author_tbl` (`id`,`name`,`description`,`address`,`p_contact`,`s_contact`,`email`,`created_on`,`created_by`) VALUES (4,'Nitome institute1','We specialize in Olympiad exams','Kota Rajasthan','+91 8983353453','+91 935739047','dhruv.inst@gmail.com','2023-07-02 09:03:03','test-tool');
+INSERT INTO `author_tbl` (`id`,`name`,`description`,`address`,`p_contact`,`s_contact`,`email`,`created_on`,`created_by`) VALUES (5,'Nitome institute2','We specialize in Olympiad exams','Kota Rajasthan','+91 8983353453','+91 935739047','dhruv.inst@gmail.com','2023-07-02 09:03:03','test-tool');
+INSERT INTO `author_tbl` (`id`,`name`,`description`,`address`,`p_contact`,`s_contact`,`email`,`created_on`,`created_by`) VALUES (6,'Nitome institute3','We specialize in Olympiad exams','Kota Rajasthan','+91 8983353453','+91 935739047','dhruv.inst@gmail.com','2023-07-02 09:03:03','test-tool');
 
 INSERT INTO `exam_tbl` (`id`,`name`,`description`,`authority`,`medium`,`img_name`,`subjects`,`grades`,`reg_url`,`exam_url`,`reg_mode_info`,`reg_mode`,`created_on`,`created_by`)
 VALUES (1001,
@@ -312,6 +316,24 @@ insert into qpapers_reviews_tbl (avg_rating,ref_id,r_1,r_2,r_3,r_4,r_5,total_rev
 insert into qpapers_reviews_tbl (avg_rating,ref_id,r_1,r_2,r_3,r_4,r_5,total_reviews) values (5.0,2,0,0,0,0,1,1);
 insert into qpapers_reviews_tbl (avg_rating,ref_id,r_1,r_2,r_3,r_4,r_5,total_reviews) values (5.0,3,0,0,0,0,1,1);
 insert into qpapers_reviews_tbl (avg_rating,ref_id,r_1,r_2,r_3,r_4,r_5,total_reviews) values (5.0,4,0,0,0,0,1,1);
+
+insert into exam_centre_tbl (id,centre_name,addr_line1,addr_line2,pincode,city,state,phone1,phone2,email,contact_name1,contact_name2,created_by,created_on)
+values (1,'Vibgyor high school','address 1','Near kirloskar','411045','Pune','Maharashtra','+918007265511','+918007264155','s.b@gmail.com','santosh','gadkari','test',CURRENT_TIMESTAMP());
+
+insert into exam_centre_tbl (id,centre_name,addr_line1,addr_line2,pincode,city,state,phone1,phone2,email,contact_name1,contact_name2,created_by,created_on)
+values (2,'Nitome kolhapur centre','address 1','Near kirloskar','411045','Kolhapur','Maharashtra','+918007265511','+918007264155','s.b@gmail.com','santosh','gadkari','test',CURRENT_TIMESTAMP());
+
+insert into exam_centre_tbl (id,centre_name,addr_line1,addr_line2,pincode,city,state,phone1,phone2,email,contact_name1,contact_name2,created_by,created_on)
+values (3,'Nitome Mumbai centre','address 1','Near kirloskar','411045','Mumbai','Maharashtra','+918007265511','+918007264155','s.b@gmail.com','santosh','gadkari','test',CURRENT_TIMESTAMP());
+
+insert into exam_centre_tbl (id,centre_name,addr_line1,addr_line2,pincode,city,state,phone1,phone2,email,contact_name1,contact_name2,created_by,created_on)
+values (4,'Nitome Benglore centre','address 1','Near kirloskar','411045','Benglore','Karnataka','+918007265511','+918007264155','s.b@gmail.com','santosh','gadkari','test',CURRENT_TIMESTAMP());
+
+insert into exam_centre_tbl (id,centre_name,addr_line1,addr_line2,pincode,city,state,phone1,phone2,email,contact_name1,contact_name2,created_by,created_on)
+values (5,'Nitome Chennai centre','address 1','Near kirloskar','411045','Chennai','Tamilnadu','+918007265511','+918007264155','s.b@gmail.com','santosh','gadkari','test',CURRENT_TIMESTAMP());
+
+insert into exam_centre_tbl (id,centre_name,addr_line1,addr_line2,pincode,city,state,phone1,phone2,email,contact_name1,contact_name2,created_by,created_on)
+values (6,'Online','Online','','','Online','','+918007265511','+918007264155','s.b@gmail.com','santosh','gadkari','test',CURRENT_TIMESTAMP());
 
 
 

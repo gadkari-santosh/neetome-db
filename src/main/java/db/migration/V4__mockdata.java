@@ -4,6 +4,7 @@ import com.opencsv.CSVReader;
 import org.apache.commons.io.IOUtils;
 import org.flywaydb.core.api.migration.BaseJavaMigration;
 import org.flywaydb.core.api.migration.Context;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.util.ResourceUtils;
 
 import javax.swing.text.DateFormatter;
@@ -19,8 +20,8 @@ import java.util.Date;
 public class V4__mockdata extends BaseJavaMigration {
 
     private String prepareStatement = "INSERT INTO mock_exam_tbl " +
-            "(id,img_name,author_id,exam_id,is_active,exam_dt,exam_duration,mode,full_addr,city,short_addr,contact_phone,grade,contact_name,price,created_on,created_by) " +
-            "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            "(id,img_name,author_id,exam_id,is_active,exam_dt,exam_duration,mode,exam_centre_id,grade,price,created_on,created_by) " +
+            "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
     @Override
     public void migrate(Context context) throws Exception {
@@ -50,17 +51,13 @@ public class V4__mockdata extends BaseJavaMigration {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
                 Date date = dateFormat.parse(line[5]);
                 statement.setDate(6, new java.sql.Date(date.getTime())); // exam_dt
-                statement.setLong(7, Long.valueOf(line[14])); // exam_duration
+                statement.setLong(7, Long.valueOf(line[10])); // exam_duration
                 statement.setString(8, line[6]); // mode
-                statement.setString(9, line[7]); // full_addr
-                statement.setString(10, line[8]); // city
-                statement.setString(11, line[9]); // short_addr
-                statement.setString(12, line[10]); // contract
-                statement.setString(13, line[11]); // grade
-                statement.setString(14, line[12]); // contact name
-                statement.setDouble(15, Double.parseDouble(line[13])); //price
-                statement.setDate(16, new java.sql.Date(new Date().getTime())); // subjecrs
-                statement.setString(17, "test-tool"); //
+                statement.setLong(9, Long.valueOf(line[7])); //exam centre id
+                statement.setString(10, line[8]); // grade
+                statement.setDouble(11, Double.parseDouble(line[9])); //price
+                statement.setDate(12, new java.sql.Date(new Date().getTime())); // subjecrs
+                statement.setString(13, "test-tool"); //
 
                 statement.addBatch();
             }
