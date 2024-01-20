@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ac082c3-40af-49ca-a898-4d3a846d6eca" name="Changes" comment="correct mock tables">
-      <change afterPath="$PROJECT_DIR$/nosql/practice_collection1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nosql/practice_collection2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nosql/practice_qs1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nosql/practice_qs2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nosql/practice_qs3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nosql/practice_qs4.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv/mockdata.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/mockdata.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/db/migration/V4__mockdata.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/migration/V4__mockdata.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/db/migration/nosql/DataPopulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/migration/nosql/DataPopulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/db/migration/nosql/PracticeCollectionDataPopulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/migration/nosql/PracticeCollectionDataPopulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/ddl/V1__neetome-ddl.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/ddl/V1__neetome-ddl.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/dml/V2__neetome_dml.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/dml/V2__neetome_dml.sql" afterDir="false" />
     </list>
@@ -133,7 +121,7 @@
       <recent name="com.neetome.db.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Application">
+  <component name="RunManager" selected="Gradle.neetome-db [build]">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.neetome.db.Application" />
       <module name="neetome-db.main" />
@@ -326,7 +314,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703968805996</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="correct mock tables">
+      <option name="closed" value="true" />
+      <created>1705233633010</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1705233633011</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">

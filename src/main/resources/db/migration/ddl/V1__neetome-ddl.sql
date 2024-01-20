@@ -191,8 +191,10 @@ CREATE TABLE academics_board_tbl (
    grades VARCHAR(255) NULL,
    default_grade VARCHAR(100) NULL,
    is_active TINYINT(1) NULL,
-    created_on datetime NULL,
-      created_by VARCHAR(255) NULL,
+   created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   created_by VARCHAR(255) NULL,
+   updated_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   updated_by VARCHAR(255) NULL,
    CONSTRAINT pk_academics_board_tbl PRIMARY KEY (id)
 );
 
@@ -221,8 +223,8 @@ CREATE TABLE user_reviews_tbl (
    user_name VARCHAR(255) NULL,
    tag VARCHAR(255) NOT NULL,
    status VARCHAR(255) NULL,
-   updated_on datetime NULL,
-   created_on datetime NULL,
+   updated_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
    CONSTRAINT pk_user_reviews_tbl PRIMARY KEY (id)
 );
 
