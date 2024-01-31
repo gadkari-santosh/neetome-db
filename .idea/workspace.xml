@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ac082c3-40af-49ca-a898-4d3a846d6eca" name="Changes" comment="correct mock tables">
+    <list default="true" id="7ac082c3-40af-49ca-a898-4d3a846d6eca" name="Changes" comment="corrected academics tables">
+      <change afterPath="$PROJECT_DIR$/nosql/practice_collection3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nosql/practice_collection4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nosql/practice_collection5.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/ddl/V1__neetome-ddl.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/ddl/V1__neetome-ddl.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/dml/V2__neetome_dml.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/dml/V2__neetome_dml.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csv/mockdata.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/mockdata.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nosql/practice_collection1.json" beforeDir="false" afterPath="$PROJECT_DIR$/nosql/practice_collection1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nosql/practice_collection2.json" beforeDir="false" afterPath="$PROJECT_DIR$/nosql/practice_collection2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/migration/nosql/PracticeCollectionDataPopulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/migration/nosql/PracticeCollectionDataPopulator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +126,7 @@
       <recent name="com.neetome.db.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.neetome-db [build]">
+  <component name="RunManager" selected="Application.Application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.neetome.db.Application" />
       <module name="neetome-db.main" />
@@ -201,6 +206,12 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Application.Application" />
+      <item itemvalue="Gradle.neetome-db [build]" />
+      <item itemvalue="Gradle.neetome-db [classes]" />
+      <item itemvalue="Gradle.neetome-db [clean]" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.neetome-db [build]" />
@@ -209,13 +220,6 @@
         <item itemvalue="Application.Application" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-17.0.9-corretto-17.0.9-249ae16d76d6-af57353a" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

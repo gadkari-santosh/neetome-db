@@ -53,17 +53,19 @@ public class PracticeCollectionDataPopulator extends DataPopulator {
             mongo.dropCollection("practiceTestBooklets");
             mongo.dropCollection("practiceQuestionSet");
 
-            String json = FileUtils.readFileToString(
-                    ResourceUtils.getFile("file:/nosql/practice_collection1.json"));
+            String[] pc = new String[] {"practice_collection1.json","practice_collection2.json","practice_collection3.json","practice_collection4.json","practice_collection5.json"};
 
-            var doc = Document.parse(json);
-            mongo.insert(doc, "practiceTestBooklets");
-
+            for (String qs : pc ) {
+                String json = FileUtils.readFileToString(
+                        ResourceUtils.getFile("file:/nosql/"+qs));
+                var doc = Document.parse(json);
+                mongo.insert(doc, "practiceTestBooklets");
+            }
 
             String[] qss = new String[] {"practice_qs1.json","practice_qs2.json","practice_qs3.json","practice_qs4.json"};
             for (String qs : qss ) {
                 String json1 = FileUtils.readFileToString(
-                        ResourceUtils.getFile("file:/nosql/"+qs));
+                        ResourceUtils.getFile("file:./nosql/"+qs));
                 var doc1 = Document.parse(json1);
                 mongo.insert(doc1, "practiceQuestionSet");
             }
@@ -71,101 +73,5 @@ public class PracticeCollectionDataPopulator extends DataPopulator {
         } catch (Exception e) {
             log.error("Unable to store data into practice collection", e);
         }
-    }
-
-    protected void populateSampleData1() {
-        PracticeCollection practiceDocument = new PracticeCollection();
-        practiceDocument.setName("NTSE 2023 practice");
-        practiceDocument.setDescription("1000+ question set for scholership exam");
-        practiceDocument.setImage("ntst.png");
-        practiceDocument.setGrade(GRADE.G_2);
-        practiceDocument.setFeatures(List.of("all maths chapters coverd","100+ questions"));
-        practiceDocument.setExamId(3l);
-        practiceDocument.setAuthorId(1l);
-        practiceDocument.setPracticeId(1001l);
-
-        ChapterDoc chapter1 = new ChapterDoc();
-        chapter1.setName("Factors & Percentage");
-
-        TopicDoc topic1 = new TopicDoc();
-        topic1.setName("2 level factors");
-
-        var qs1Id = new ObjectId().toString();
-
-        QuestionSetInfoDoc qs1 = new QuestionSetInfoDoc();
-        qs1.setId(new ObjectId().toString());
-
-        QuestionSetInfoDoc qs2 = new QuestionSetInfoDoc();
-        qs2.setId(new ObjectId().toString());
-
-        topic1.setQuestionSets(List.of(qs1,qs2));
-
-        chapter1.setTopics(List.of(topic1));
-
-        ChapterDoc chapter2 = new ChapterDoc();
-        chapter2.setName("Numbers");
-
-        TopicDoc topic21 = new TopicDoc();
-        topic21.setName("Roman");
-
-        String qSetIdEasy = new ObjectId().toString();
-        String qSetIdHard = new ObjectId().toString();
-
-        QuestionSetInfoDoc qs21 = new QuestionSetInfoDoc();
-        qs21.setId(qSetIdEasy);
-
-        QuestionSetInfoDoc qs22 = new QuestionSetInfoDoc();
-        qs22.setId(qSetIdHard);
-
-        topic21.setQuestionSets(List.of(qs21,qs22));
-
-        chapter2.setTopics(List.of(topic21));
-
-        SubjectDoc subject = new SubjectDoc();
-        subject.setName(SUBJECT_NAME.MATHS);
-        subject.setChapters(List.of(chapter1,chapter2));
-
-        PracticeIndexDoc index = new PracticeIndexDoc();
-        index.setSubjects(Arrays.asList(subject));
-        practiceDocument.setIndex(index);
-
-        repository.save(practiceDocument);
-
-        PracticeQuestionSetCollection questionSet = new PracticeQuestionSetCollection();
-        questionSet.setId(qSetIdEasy);
-        questionSet.setPracticeTestId(1l);
-
-        QuestionDoc q1 = new QuestionDoc();
-        q1.setId("64aaf814d88e9506fe950754::1");
-        q1.setText("Which of these is a full list of factors of 24?");
-
-        OptionDoc op1 = OptionDoc.builder().value("24, 48, 72, 96").build();
-        OptionDoc op2 = OptionDoc.builder().value("1, 2, 3, 4, 6, 8, 12, 24").correct(true).build();
-        OptionDoc op3 = OptionDoc.builder().value("0, 1, 2, 3, 4, 6, 8, 12, 24").build();
-
-        q1.setExplanation("");
-        q1.setOptions(List.of(op1,op2,op3));
-
-        QuestionDoc q2 = new QuestionDoc();
-        q2.setId("64aaf814d88e9506fe950754::2");
-        q2.setText("Which of these is a full list of the common factors of 12 and 30?");
-
-        OptionDoc q2Op1 = OptionDoc.builder().value("1, 2, 3, 4, 6").correct(true).build();
-        OptionDoc q2Op2 = OptionDoc.builder().value("1, 2, 4, 6").build();
-        OptionDoc q2Op3 = OptionDoc.builder().value("1, 2, 3, 6").build();
-
-        q2.setExplanation("This is test explaination");
-        q2.setOptions(List.of(q2Op1,q2Op2,q2Op3));
-
-        questionSet.setQuestions(List.of(q1,q2));
-
-        PracticeQuestionSetCollection questionSet2 = new PracticeQuestionSetCollection();
-        questionSet2.setId(qSetIdHard);
-        questionSet2.setPracticeTestId(1l);
-
-        questionSet.setQuestions(List.of(q1,q2));
-
-        qSetRepository.save(questionSet);
-        qSetRepository.save(questionSet2);
     }
 }

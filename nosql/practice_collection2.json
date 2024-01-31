@@ -1,10 +1,10 @@
 {
-  "_id" : ObjectId("6587166259b799549ec79218"),
-  "practiceId" : 1,
+  "_id" : ObjectId("6587166259b799549ec79212"),
+  "practiceId" : 2,
   "name" : "NTSE 2023 practice",
-  "description" : "1000+ question set for scholership exam",
-  "image" : "ntst.png",
-  "grade" : "G_2",
+  "description" : "Exam oriented practice questions",
+  "image" : "drhbbvc.png",
+  "grade" : "G_6",
   "examId" : 3,
   "authorId" : 1,
   "subjects" : [
